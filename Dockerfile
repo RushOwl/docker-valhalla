@@ -8,7 +8,8 @@ MAINTAINER Nils Nolde <nils@gis-ops.com>
 
 # remove some stuff from the original image
 RUN cd /usr/local/bin && \
-  preserve="valhalla_service valhalla_build_tiles valhalla_build_config valhalla_build_admins valhalla_build_timezones valhalla_build_elevation valhalla_ways_to_edges" && \
+#   preserve="valhalla_service valhalla_build_tiles valhalla_build_config valhalla_build_admins valhalla_build_timezones valhalla_build_elevation valhalla_ways_to_edges" && \
+  preserve="valhalla_programs valhalla_run_map_match valhalla_benchmark_loki valhalla_benchmark_skadi valhalla_run_isochrone valhalla_run_route valhalla_benchmark_adjacency_list valhalla_run_matrix valhalla_path_comparison valhalla_export_edges valhalla_expand_bounding_box valhalla_service valhalla_data_tools valhalla_build_statistics valhalla_ways_to_edges valhalla_validate_transit valhalla_benchmark_admins valhalla_build_connectivity	valhalla_build_tiles valhalla_build_admins valhalla_convert_transit valhalla_fetch_transit valhalla_query_transit valhalla_add_predicted_traffic valhalla_assign_speeds" && \
   mv $preserve .. && \
   for f in valhalla*; do rm $f; done && \
   cd .. && mv $preserve ./bin
